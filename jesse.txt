@@ -1,7 +1,7 @@
 Team Members:
-JJJ
-JJS
-TET
-PRR
+JJJ Jesse Jenks	
+JJS Jon Sims
+TET Thavy Thach
+PRR Patrick Ryan
 
 ===
