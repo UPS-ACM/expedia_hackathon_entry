@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  location_country: MyString
+  location_city: MyString
+  min_price_q1: 
+  min_price_q2: 
+  min_price_q3: 
+  min_price_q4: 
+
+two:
+  name: MyString
+  location_country: MyString
+  location_city: MyString
+  min_price_q1: 
+  min_price_q2: 
+  min_price_q3: 
+  min_price_q4: 
