@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160130213147) do
+ActiveRecord::Schema.define(version: 20160131010044) do
 
   create_table "deals", force: :cascade do |t|
     t.string   "name"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20160130213147) do
     t.integer  "hotel_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "panoramio_rank"
   end
 
   add_index "deals", ["hotel_id"], name: "index_deals_on_hotel_id"

@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Place searches</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBInghLZWYDJBA789Ga2_2qTmM5DLb1nno&libraries=places"></script>
-  </head>
-  <body>
-    
-    <script>
+<script>
     var data
     function myCallback(jsonpData){
     	data = jsonpData;
@@ -76,5 +66,7 @@
     </script>
     <script src = 'http://www.panoramio.com/map/get_panoramas.php?set=public&from=0&to=120&minx=-180&miny=-90&maxx=180&maxy=90&size=small&mapfilter=false&callback=myCallback'></script>
     <div id ="googleMap" style ="width:900px;height:500px;"></div>
-  </body>
-</html>
+
+    <%= image_tag("like.png", size: "92x92") %>
+    <%= image_tag("dislike.png", size: "92x92") %>
+
