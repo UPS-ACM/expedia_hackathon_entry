@@ -1,5 +1,8 @@
 <script>
     var data
+	var size = Math.min(
+			Math.floor($(window).width()*0.3),
+			128).toString()+'px';
     function myCallback(jsonpData){
     	data = jsonpData;
     	var len = (jsonpData.count >= 10)? 10: jsonpData.count;
@@ -24,12 +27,10 @@
 			    mapTypeId: google.maps.MapTypeId.ROADMAP
 		  	};
 
-		  	mapWidth = Math.floor($(window).width()*0.9).toString();
-		  	mapHeight = Math.floor($(window).height()*0.4).toString();
-		  	console.log(mapWidth,mapHeight)
 			map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-			// document.getElementById("googleMap").setAttribute("style","width:"+mapWidth+";height:"+mapHeight);
-			
+		  	document.getElementById("googleMap").style.width = Math.floor($(window).width()*0.9).toString()+'px';
+		  	document.getElementById("googleMap").style.height = Math.floor($(window).height()*0.4).toString()+'px';
+
 			var request = {
 			    // placeID : something.place_id
 			    location: myCenter,
@@ -69,8 +70,31 @@
 	}
     </script>
     <script src = 'http://www.panoramio.com/map/get_panoramas.php?set=public&from=0&to=120&minx=-180&miny=-90&maxx=180&maxy=90&size=small&mapfilter=false&callback=myCallback'></script>
-    <div id ="googleMap" ></div>
+    <div id ="googleMap" style="display:block;
+    margin-left: auto;
+    margin-right: auto;"></div>
 
-    <%= image_tag("like.png", size: "92x92") %>
-    <%= image_tag("dislike.png", size: "92x92") %>
+    <div class="row">
+	    <div class="col-md-2"></div>
+		<div class="col-md-3"> 
+			<%= link_to("like") do %>
+				<%= image_tag("like.png", id: 'like', display:'block',class: "center-block") %>
+			<% end %>
+		</div>
+	    <div class="col-md-2"></div>
+		<div class="col-md-3">
+			<%= link_to("dislike") do %>
+				<%= image_tag("dislike.png", id: 'dislike', display:'block',class: "center-block") %>
+			<% end %>
+		</div>
+	    <div class="col-md-2"></div>
+    </div>
+
+    <script type="text/javascript">
+		document.getElementById("like").style.width = size;
+	  	document.getElementById("like").style.height = size;
+		document.getElementById("dislike").style.width = size;
+	  	document.getElementById("dislike").style.height = size;
+    </script>
+
 
