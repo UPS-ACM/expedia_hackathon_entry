@@ -74,7 +74,7 @@
     margin-left: auto;
     margin-right: auto;"></div>
 
-    <div class="row">
+    <div class="row" id="swipe-bar">
 	    <div class="col-md-2"></div>
 		<div class="col-md-3"> 
 			<%= link_to("like") do %>
@@ -95,6 +95,31 @@
 	  	document.getElementById("like").style.height = size;
 		document.getElementById("dislike").style.width = size;
 	  	document.getElementById("dislike").style.height = size;
+
+		// create a simple instance
+		// by default, it only adds horizontal recognizers
+		var mc1 = new Hammer(document.getElementById("swipe-bar"));
+
+		// let the pan gesture support all directions.
+		// this will block the vertical scrolling on a touch-device while on the element
+		mc1.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+
+		// listen to events...
+		mc1.on("panleft", function(ev) {
+		    window.location="/like";
+		});
+		// create a simple instance
+		// by default, it only adds horizontal recognizers
+		var mc2 = new Hammer(document.getElementById("swipe-bar"));
+
+		// let the pan gesture support all directions.
+		// this will block the vertical scrolling on a touch-device while on the element
+		mc2.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+
+		// listen to events...
+		mc2.on("panright", function(ev) {
+		    window.location="/dislike";
+		});
     </script>
 
 
