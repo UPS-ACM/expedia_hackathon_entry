@@ -24,8 +24,12 @@
 			    mapTypeId: google.maps.MapTypeId.ROADMAP
 		  	};
 
+		  	mapWidth = Math.floor($(window).width()*0.9).toString();
+		  	mapHeight = Math.floor($(window).height()*0.4).toString();
+		  	console.log(mapWidth,mapHeight)
 			map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
+			// document.getElementById("googleMap").setAttribute("style","width:"+mapWidth+";height:"+mapHeight);
+			
 			var request = {
 			    // placeID : something.place_id
 			    location: myCenter,
@@ -65,7 +69,7 @@
 	}
     </script>
     <script src = 'http://www.panoramio.com/map/get_panoramas.php?set=public&from=0&to=120&minx=-180&miny=-90&maxx=180&maxy=90&size=small&mapfilter=false&callback=myCallback'></script>
-    <div id ="googleMap" style ="width:900px;height:500px;"></div>
+    <div id ="googleMap" ></div>
 
     <%= image_tag("like.png", size: "92x92") %>
     <%= image_tag("dislike.png", size: "92x92") %>
