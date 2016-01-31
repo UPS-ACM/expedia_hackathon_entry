@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  get 'deal/like'
+  
+  resources :deal, :only => [:show]
+  resources :hotel, :only => [:show]
+  post 'deal/like'
 
-  get 'deal/dislike'
+  post 'deal/dislike'
+
+  root to: 'deal#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

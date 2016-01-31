@@ -4,4 +4,10 @@ class DealController < ApplicationController
 
   def dislike
   end
+
+  def show
+  end
+  def index
+
+  end
 end
